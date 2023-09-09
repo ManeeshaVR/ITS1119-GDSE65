@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex Box</title>
+
+    <style>
+        #section1 , #section2, #section3 {
+            width: 1000px;
+            height: 500px;
+            border: 2px solid red;
+            display: flex;
+            flex-direction: row-reverse;
+            margin: 5px;
+        }
+        section>div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid darkred;
+            font-size: 50px;
+        }
+        section>div:first-child{
+            background: red;
+        }
+        section>div:nth-child(2){
+            background: orange;
+        }
+        section>div:nth-child(3){
+            background: yellow;
+        }
+        #section2{
+            justify-content: center;
+            align-items: center;
+        }
+        #section2>div:nth-child(1){
+            background: #1abc9c;
+        }
+        #section3{
+            justify-content: space-between;
+            /*align-items: center;*/
+        }
+        #section3>div:first-child{
+            background: red;
+        }
+        #section3>div:nth-child(2){
+            background: orange;
+            align-self: center;
+        }
+        #section3>div:nth-child(3){
+            background: yellow;
+            align-self: self-end;
+        }
+    </style>
+
+</head>
+<body>
+
+<section id="section1">
+    <div>A</div>
+    <div>B</div>
+    <div>C</div>
+</section>
+
+<section id="section2">
+    <div>D</div>
+</section>
+
+
+<section id="section3">
+    <div>E</div>
+    <div>F</div>
+    <div>G</div>
+</section>
+
+</body>
+</html>

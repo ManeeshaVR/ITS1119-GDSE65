@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Positions css</title>
+
+    <style>
+        section{
+            width: 800px;
+            height: 800px;
+            border: 3px red solid;
+            position: absolute;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: palevioletred;
+            position: absolute;
+
+        }
+        section>div:first-child{
+            left: 0;
+        }
+        section>div:nth-child(2){
+            right: 0;
+            top: 0;
+        }
+        section>div:nth-child(3){
+            left: 0;
+            bottom: 0;
+        }
+        section>div:last-child{
+            right: 0;
+            bottom: 0;
+        }
+        section>div:nth-child(4){
+            right: calc(50% - 50px);
+            top: calc(50% - 50px);
+            top: 50%;
+        }
+    </style>
+
+</head>
+<body>
+
+<section>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
+
+</body>
+</html>

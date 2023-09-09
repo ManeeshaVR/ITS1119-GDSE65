@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS SELECTORS</title>
+
+    <style>
+
+        /*!*-- Type selector --*!*/
+        /*h1{*/
+        /*    color: red;*/
+        /*}*/
+        /*p{*/
+        /*    background-color: darkviolet;*/
+        /*}*/
+
+        /*!*-- Id selector --*!*/
+        /*#subtopic-1{*/
+        /*    color: yellowgreen;*/
+        /*}*/
+        /*#subtopic-2{*/
+        /*    color: deepskyblue;*/
+        /*}*/
+
+        /*!*-- Class selector --*!*/
+        /*.myStyle{*/
+        /*    color: lightseagreen;*/
+        /*    background-color: darkslategrey;*/
+        /*}*/
+
+
+        /*!*-- Universal selector --*!*/
+        /**{*/
+        /*    color: white;*/
+        /*    background-color: black;*/
+        /*}*/
+
+        /*!*-- Attribute selector --*!*/
+        /*[name]{*/
+        /*    color: lightseagreen;*/
+        /*}*/
+        /*[name="js"]{*/
+        /*    font-weight: bold;*/
+        /*}*/
+        /*[href = "https://ibm.com"]{*/
+        /*    color: rosybrown;*/
+        /*}*/
+        /*[href ^= "https"]{*/
+        /*    background-color: darkviolet;*/
+        /*}
+        [href $= "lk"]{
+            color: brown;
+        }
+        [href *= "https"]{
+            background-color: lightseagreen;
+        }
+        [href ~= "students"]{
+            background-color: darkviolet;
+        }
+        [name = "google"]{
+            background-color: blue;
+        }
+        li[name = "google"]{
+            background-color: blue;
+        }
+        .myStyle[name]{
+            background-color: yellow;
+        }*/
+
+        /*!*!*-- Pseudo selector --*!*!*/
+
+
+        /*h1:hover{*/
+        /*    color: red;*/
+        /*    cursor: pointer;*/
+        /*}*/
+
+        /*!*active - apply styles to already visited links*!*/
+        /*h1:active{*/
+        /*    color: lightseagreen;*/
+        /*}*/
+
+        /*!*visited - apply styles to already visited links*!*/
+        /*a:visited{*/
+        /*    color: red;*/
+        /*}*/
+
+        /*!*link - apply styles to no visited linked *!*/
+        /*a:link{*/
+        /*    color: lightseagreen;*/
+        /*}*/
+
+        /*input:focus{*/
+        /*    background-color: lightseagreen;*/
+        /*}*/
+
+        /*li:first-child{*/
+        /*    color: darkviolet;*/
+        /*}*/
+
+        /*li:last-child{*/
+        /*    color: darkviolet;*/
+        /*}*/
+
+        /*li:nth-child(2){*/
+        /*    color: deepskyblue;*/
+        /*}*/
+
+        /*h2:nth-child(3){*/
+        /*    color: red;*/
+        /*}*/
+
+        /*h4:first-child{*/
+        /*    color: yellow;*/
+        /*}*/
+
+        /*h4:nth-last-child(2){*/
+        /*    color: lightseagreen;*/
+        /*}*/
+
+        /*li:only-child{*/
+        /*    color: gold;*/
+        /*}*/
+
+        /*ol>li:first-child{*/
+        /*    color: red;*/
+        /*}*/
+
+        /*!* Pseudo Elements *!*/
+        /*h1::before{*/
+        /*    content: "🖕";*/
+        /*}*/
+
+        /*h1::after{*/
+        /*    content: "🖕";*/
+        /*}*/
+
+        /*h2:first-letter{*/
+        /*    color: brown;*/
+        /*}*/
+
+        /*p::first-line{*/
+        /*    color: rosybrown;*/
+        /*}*/
+
+        /*input::placeholder{*/
+        /*    color: yellowgreen;*/
+        /*}*/
+
+        /*input::file-selector-button{*/
+        /*    background-color: brown;*/
+        /*}*/
+
+        /*input::-webkit-file-upload-button{*/
+        /*    background-color: brown;*/
+        /*}*/
+
+        /*!* Selection *!*/
+        /*::selection{*/
+        /*    background-color: darkslategrey;*/
+        /*    color: lightseagreen;*/
+        /*}*/
+
+        /*p::selection{*/
+        /*    background-color: darkslateblue;*/
+        /*    color: lightseagreen;*/
+        /*}*/
+
+        /*!* Marker *!*/
+        /*::marker{*/
+        /*    content: "";*/
+        /*}*/
+
+        /*input::-webkit-file-upload-button:hover{*/
+        /*    background-color: darkgoldenrod;*/
+        /*}*/
+
+        /* Grouping Selectors */
+        h1,h2, h3,.myStyle{
+            color: darkgoldenrod;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Internet Technologies</h1>
+
+<section>
+    <h4>IJSE 01</h4>
+    <h4>IJSE 02</h4>
+    <h4>IJSE 03</h4>
+    <h4>IJSE 04</h4>
+    <h4>IJSE 05</h4>
+</section>
+
+
+<a href="http://google.com" target="_blank" name="google">Google</a>
+<a href="https://ibm.com" target="_blank" name="css">IBM</a>
+<a href="http://ijse.lk" target="_blank">IJSE</a>
+<a href="http://ijse students .lk" target="_blank">IJSE STUDENTS</a>
+
+<h3 id="subtopic-1">Contect</h3>
+<!--<ol>-->
+<!--    <li name="google">HTML</li>-->
+<!--    <li>CSS-->
+<!--        <ol>-->
+<!--            <li>Introduction to css</li>-->
+<!--            <li>History of CSS</li>-->
+<!--            <li>CSS Rules</li>-->
+<!--            <li>CSS Selectors</li>-->
+<!--            <li>Other Topics</li>-->
+<!--        </ol>-->
+<!--    </li>-->
+<!--    <li>JS</li>-->
+<!--</ol>-->
+
+<ol>
+    <li>Introduction to css</li>
+<!--    <li>History of CSS</li>-->
+<!--    <li>CSS Rules</li>-->
+<!--    <li>CSS Selectors</li>-->
+<!--    <li>Other Topics</li>-->
+</ol>
+
+<section name="html">
+    <h2 id="subtopic-2">HTML</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores atque illum ipsa! Ab illo incidunt recusandae
+    sint velit vero voluptatem!</p>
+</section>
+
+<section>
+<h2 class="myStyle" name="css">CSS</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores atque illum ipsa! Ab illo incidunt recusandae
+    sint velit vero voluptatem!</p>
+</section>
+
+<section name="js">
+<h2 class="myStyle">JS</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores atque illum ipsa! Ab illo incidunt recusandae
+    sint velit vero voluptatem!</p>
+</section>
+<hr>
+
+<form action="">
+    <label for="fname">First Name</label><br>
+    <input type="text" name="fname" id="fname"><br><br>
+    <label for="lname">Last Name</label><br>
+    <input type="text" name="lname" id="lname"><br><br>
+    <label for="email">Email</label><br>
+    <input type="email" name="email" id="email" placeholder="Example@gmail.com"><br><br>
+    <label for="msg">Message</label><br>
+    <textarea name="msg" id="msg" cols="25"></textarea><br><br>
+
+
+    <input type="file">Browse</input>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Engines</title>
+</head>
+<body>
+
+
+<script>
+
+    //charAt
+    let str = 'Hello World';
+    console.log(str.charAt(6));//W
+
+    //charCodeAt
+    console.log(str.charCodeAt(3));//108
+
+    //concat
+    let str2 = 'Vimukthi'
+    console.log(str.concat(" ",str2));// Hello World Vimukthi
+
+    //startsWith
+    let str3 = "Maneesha"
+    console.log(str3.startsWith("Man"));// true
+
+    //endsWith
+    let str4 = 'lanka.lk'
+    console.log(str3.endsWith("lk"));// true
+
+    //fromCharCode
+    console.log(String.fromCharCode(72));//H
+
+    //includes
+    console.log(str4.includes(".com"));//false
+    console.log(str.includes("world"));//false
+    console.log(str.includes("World"));//true
+
+    //indexOf
+    console.log(str.indexOf("World"));//6
+
+    //lastIndexOf
+    console.log(str.lastIndexOf("l"));//9
+
+    //localCompare
+    let value1 = 'Hello'
+    let value2 = 'Hello'
+    let value3 = 'Vimukthi'
+
+    console.log(value1.localeCompare(value2));//0
+    console.log(value1.localeCompare(value3));//-1
+    console.log(value2.localeCompare(value3));//-1
+
+</script>
+</body>
+</html>
