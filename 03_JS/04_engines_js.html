@@ -46,10 +46,48 @@
     let value1 = 'Hello'
     let value2 = 'Hello'
     let value3 = 'Vimukthi'
+    let value4 = 'Bello'
+    let value5 = 'Zello'
+    let value6 = 'hello'
 
     console.log(value1.localeCompare(value2));//0
     console.log(value1.localeCompare(value3));//-1
     console.log(value2.localeCompare(value3));//-1
+    console.log(value1.localeCompare(value4));//1
+    console.log(value1.localeCompare(value5));//-1
+    console.log(value1.localeCompare(value6));//1
+
+
+    //match
+    console.log(str.match(/o/g));
+
+    //replace
+    let str5 = 'html,css/js,angular'
+    console.log(str.replace("World", "Vimukthi"));//Hello Vimukthi
+    console.log(str5.replace(",", "/"));//html/css/js,angular
+    console.log(str5.replaceAll(",", "/"));//html,css/js/angular
+
+    /search
+    console.log(str2.search('Hello')); //0
+    console.log(str2.search('IJSE')); //-1
+
+    //toUppercase
+    console.log(str5.toUpperCase()); //HELLO HELLO
+
+    //toLowercase
+    console.log(str5.toLowerCase()); //hello hello
+
+    //toLocalUppercase and toLocalLowercase
+    console.log(str5.toLocaleUpperCase()); //HELLO HELLO
+    console.log(str5.toLocaleLowerCase()); //hello hello
+
+    //trim
+    let value5 = '  hello  '
+    console.log(value5.trim());
+
+    let x = new String('Hello');
+    console.log(x.length)
+
 
 </script>
 </body>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS JS</title>
+</head>
+<body>
+
+<div>
+    <h1 id="topic1">Welcome to Sri Lanka</h1>
+    <h1 id="topic2">Welcome to Colombo</h1>
+    <h1 id="topic3">Welcome to Sri IJSE</h1>
+    <h1 id="topic4">Welcome to Sri GDSE</h1>
+</div>
+
+<script>
+    // var styles = {
+    //     background : 'black',
+    //     color : 'white'
+    // }
+
+    let styles = 'color: purple; background: black';
+    document.getElementsByTagName('h1')[0].style.color = 'red';
+    document.getElementsByTagName('h1')[1].style.color = 'orange';
+    document.getElementsByTagName('h1')[2].style.color = 'yellow';
+    document.getElementsByTagName('h1')[3].style.cssText = styles;
+
+</script>
+
+</body>
+</html>

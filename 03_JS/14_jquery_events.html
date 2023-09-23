@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery Events</title>
+    <style>
+        .circle{
+            width: 100px;
+            aspect-ratio: 1/1;
+            border: 2px solid black;
+            margin: 30px;
+            border-radius: 100%;
+        }
+        .box{
+            width: 100px;
+            aspect-ratio: 1/1;
+            background-color: blueviolet;
+        }
+        .box2{
+            width: 50px;
+            aspect-ratio: 1/1;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+
+<h1>0</h1>
+<button type="button">Select</button>
+<button type="reset">Reset</button>
+<br><br><br>
+
+<div class="circle"></div>
+<button type="button" >OFF</button>
+<br><br><br>
+
+<h1>Hello</h1>
+<input type="text">
+<br><br><br>
+
+<div class="box">
+    <div class="box2"></div>
+</div><br>
+<button class="click">Click</button><br><br>
+<input type="text" class="textField">
+<input type="text" class="textField2">
+<br><br><br>
+
+<input type="radio" name="course" id="gdse" value="GDSE">
+<label for="gdse">GDSE</label>
+<input type="radio" name="course" id="cmjd" value="CMJD">
+<label for="cmjd">CMJD</label>
+
+<script src="assets/jquery/jquery.min.js"></script>
+<script>
+
+    //-------------------------------------
+    let label = $('h1').eq(0);
+    let count = 0;
+
+    $('button').eq(0).on('click',() =>{
+        count++;
+        label.text(count)
+    } );
+    $('button').eq(1).on('click', () => {
+        count = 0;
+        label.text(count);
+    });
+
+    //------------------------------------------
+    let onStyle = {
+        margin: '30px',
+        borderRadius: '100%',
+        width: '100px',
+        aspectRatio: '1/1',
+        background: 'yellow',
+        boxShadow:  '20px 20px 60px #d9d900 ,-20px -20px 60px #ffff00',
+        border: '2px solid orange'
+    }
+
+    let offStyle = {
+        margin: '30px',
+        borderRadius: '100%',
+        width: '100px',
+        aspectRatio: '1/1',
+        background: 'white',
+        boxShadow: '0px 0px 0px',
+        border: '1px solid black'
+    }
+
+    let switchBtn = $('button').eq(2);
+    let circle = $('.circle');
+    let isOn = false;
+    switchBtn.on('click', () => {
+        if (isOn){
+            switchBtn.text('ON');
+            circle.css(offStyle);
+            circle.addClass(offStyle)
+            isOn = false;
+        }else{
+            switchBtn.text('OFF');
+            circle.css(onStyle);
+            circle.removeClass();
+            circle.addClass(onStyle);
+            isOn = true;
+        }
+    });
+
+    //-------------------------------
+    $('input').eq(0).on('input', (event) => {
+        $('h1').eq(1).text(event.target.value)
+    })
+
+    //----- Mouse Functions -----//
+    $('.box').on('mouseenter', () => {
+        console.log("Mouse Enter")
+    })
+    $('.box').on('mouseleave', () => {
+        console.log("Mouse Leave")
+    })
+    $('.box').on('mouseup', () => {
+        console.log("Mouse Leave")
+    })
+    $('.click').on('mouseup', () => {
+        console.log("Mouse Up")
+    })
+    $('.click').on('mousedown', () => {
+        console.log("Mouse Down")
+    })
+    $('.click').on('click', () => {
+        console.log("Mouse Pressed")
+    })
+    $('.click').on('dblclick', () => {
+        console.log("Mouse Double Click")
+    })
+    $('.box').on('mouseover', () => {
+        console.log("Mouse Over")
+    })
+
+    //----- TextField Functions -----//
+    $('.textField').on('focus', () => {
+        console.log("Mouse Focused")
+        $('.textField').css("background", "Red")
+    })
+    $('.textField').on('blur', () => {
+        console.log("Blured")
+        $('.textField').css("background", "Blue")
+    })
+    $('.textField2').on('keyup', () => {
+        console.log("Key up")
+    })
+    $('.textField2').on('keydown', () => {
+        console.log("Key down")
+    })
+    $('.textField2').on('keypress', () => {
+        console.log("Key Pressed")
+    })
+    $('.textField').on('keypress', (event) => {
+        let keyCode = event.which;
+        if (keyCode == 13){
+            console.log("Enter Pressed");
+        }
+    })
+
+    //----- Radio Functions -----//
+    $('input[name = course]').on('change', (event) => {
+        console.log(event.target.value)
+
+    })
+
+
+
+</script>
+</body>
+</html>

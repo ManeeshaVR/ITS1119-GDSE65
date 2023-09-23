@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Second DOM JS</title>
+</head>
+<body>
+
+<div>
+    <h1 id="topic1">Welcome to Asia</h1>
+    <h1 class="class">Welcome to Sri Lanka</h1>
+    <h2 id="topic2">Welcome to Colombo</h2>
+    <h3 class="class">Welcome to IJSE</h3>
+    <h4 name="gdse">Welcome to GDSE</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque fuga harum hic iste iure laboriosam
+        molestiae mollitia nesciunt quam.</p>
+</div>
+<br>
+<section>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam asperiores consectetur ea error explicabo
+        fuga in laboriosam necessitatibus odit perferendis perspiciatis porro quam saepe sapiente sequi suscipit totam
+        velit voluptas, voluptatum! Aliquam esse eveniet sunt suscipit temporibus tenetur ut.</p>
+    <ul>
+        <li>Java</li>
+        <li>Python</li>
+        <li>Html</li>
+        <li>Css</li>
+    </ul>
+</section>
+
+
+<script>
+
+    //by tag name
+    console.log(document.getElementsByTagName('h1'));
+    console.log(document.getElementsByTagName('h2'));
+    console.log(document.getElementsByTagName('h3'));
+    console.log(document.getElementsByTagName('h4'));
+    console.log(document.getElementsByTagName('h5'));
+
+    //by id
+    console.log(document.getElementById('topic1'))
+    console.log(document.getElementById('topic2'))
+
+    //by class
+    console.log(document.getElementsByClassName('class'))
+    // console.log(document.getElementsByClassName('class2'))
+
+    //by name
+    console.log(document.getElementsByName('gdse'))
+
+    //by using any selectors as we use in CSS
+    console.log(document.querySelector('.class'))
+    console.log(document.querySelectorAll('.class'))
+    console.log(document.querySelectorAll('div>p'))
+
+    //get inner text
+    console.log(document.getElementById('topic2').innerText);
+    console.log(document.getElementsByClassName('class').innerText);
+    let classes = document.getElementsByClassName('class');
+    console.log(classes[0].innerText);
+
+    //change content
+    classes[0].innerText = 'Come to Sri Lanka';
+
+    //get html tags
+    console.log(classes[0].innerHTML)
+    console.log(document.querySelectorAll('section>ul>li'))
+    console.log(document.querySelectorAll('section>ul>li')[1].innerHTML)
+    let lists = document.querySelectorAll('section>ul>li');
+    lists[1].innerHTML = '<ol> <li>Apple</li> <li>Orange</li> <li>Grape</li> <li>Banana</li> ' +
+        '</ol>'
+
+    let date = new Date();
+    console.log(date)
+    let h1s = document.getElementsByTagName('h1')
+    console.log(h1s[0].innerText = date)
+</script>
+</body>
+</html>

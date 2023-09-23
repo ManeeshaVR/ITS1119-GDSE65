@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loops JS</title>
+</head>
+<body>
+
+
+<script>
+    //For Loop
+    for (let i = 0; i < 100; i++) {
+        console.log(i+1)
+    }
+
+    let word = "Javascript"
+
+    for (let i = 0; i < word.length; i++) {
+        console.log(word.charAt(i))
+    }
+
+    //while Loop
+    let number = 0;
+    while (number<word.length){
+        console.log(word.charAt(number))
+        number++
+    }
+
+    //do while Loop
+    let num = 0;
+    do {
+        console.log(word.charAt(num))
+        num++;
+    }while (num<word.length)
+
+</script>
+</body>
+</html>

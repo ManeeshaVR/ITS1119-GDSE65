@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function JS</title>
+</head>
+<body>
+
+<script>
+
+    //Named Functions
+    function myfunction(){
+        console.log("Hello")
+        return "World"
+    }
+    let result = myfunction();
+    console.log(result);
+
+    function  myfunction2(name, institue){
+        console.log(name+' '+institue)
+    }
+    myfunction2("Vimukthi", "IJSE")
+
+    //Function Expressions
+    const myFunction = function (){
+        console.log("Function Expression")
+    }
+
+    //Arrow Functions
+    const myFunction4 = (name, program) => {
+        console.log(`Hi ${name}  Welcome to ${program}`);
+    }
+    myFunction4("Vimukthi", "GDSE");
+
+    //Function Constructor
+    const conFun = new Function('a','b','return a+b')
+    console.log(conFun(3, 2));
+
+    //Anonymous Function
+    (function (){
+        console.log("Hi")
+    })();
+
+    //Callback Function
+    function first(){
+        console.log("First")
+    }
+    function second(args2){
+        args2();
+    }
+
+    second(first)
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery Form</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="text-center m-3">
+            <h1>Student Manage</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-lg-6 col-md-12 col-sm-12 col-12">
+            <form>
+                <div class="mb-3">
+                    <label for="studentId" class="form-label">Student Id</label>
+                    <input type="number" class="form-control" id="studentId">
+                </div>
+                <div class="mb-3">
+                    <label for="fullname" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullname">
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control" id="address" style="height: 100px"></textarea>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="GDSE">
+                    <label class="form-check-label" for="GDSE">GDSE</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="CMJD">
+                    <label class="form-check-label" for="CMJD">CMJD</label>
+                </div>
+                <div class="mt-3">
+                    <button type="button" class="btn btn-success">Submit</button>
+                    <button type="button" class="btn btn-primary">Update</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="reset" class="btn btn-warning">Reset</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col col-lg-6 col-md-12 col-sm-12 col-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Student ID</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Course</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="assets/bootstrap-5.3.1/js/bootstrap.min.js"></script>
+<script src="assets/jquery/jquery.min.js"></script>
+<script>
+    let submit = $('button').first();
+    let studentId = $('#studentId');
+    let name = $('#fullname');
+    let textarea = $('#address');
+    let gdseRadio = $('#GDSE');
+    let cmjdRadio = $('#CMJD');
+
+    submit.on('click', () => {
+        let studentIdValue = studentId.val();
+        let nameValue = name.val().trim();
+        let address = textarea.val().trim();
+        let course;
+
+        if (gdseRadio.prop('checked')) {
+            course = 'GDSE';
+        } else if (cmjdRadio.prop('checked')) {
+            course = 'CMJD';
+        } else {
+            course = 'Not selected';
+        }
+
+        // Add data to the table
+        $('tbody').append(
+            `<tr>
+            <th scope="row">${studentIdValue}</th>
+            <td>${nameValue}</td>
+            <td>${address}</td>
+            <td>${course}</td>
+        </tr>`
+        );
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Listner JS</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<h1>0</h1>
+<button type="button">Click</button>
+<button type="reset">Reset</button>
+<br><br><br>
+
+<div class="circle"></div>
+<br>
+<button type="button" class="">OFF</button>
+<br><br><br>
+
+<h1>Hello</h1>
+<input type="text">
+<br><br>
+<input type="text" placeholder="Type something">
+<button type="button" id="show">Show</button>
+
+<br><br>
+<input type="password" placeholder="Type password">
+<button type="button" id="password">Show</button>
+
+<script>
+
+    //----------------------------------------------------
+
+    let button1 = document.getElementsByTagName("button")[0];
+    let button2 = document.getElementsByTagName("button")[1];
+    let count = 0;
+
+
+
+    button1.addEventListener('click', function (){
+        count++
+        console.log(count);
+        label1.innerText = count;
+    })
+    button2.addEventListener('click', function (){
+        count = 0;
+        label1.innerText = count;
+    })
+
+    //--------------------------------------------------------
+
+    let button3 = document.getElementsByTagName("button")[2];
+    let label1 = document.getElementsByTagName('h1')[0];
+    let circle = document.getElementsByTagName('div')[0];
+    let styles = " width: 100px; height: 100px; border: 1px solid black; border-radius: 100%";
+    let style1 = " width: 100px; height: 100px; border-radius: 100%; background: yellow; border: 2px solid orange; box-shadow:  20px 20px 60px #d9d900,\n" +
+        "             -20px -20px 60px #ffff00;";
+    let style2 = " width: 100px; height: 100px; border-radius: 100%; background: white; border: 1px solid black"
+
+    document.getElementsByTagName('div')[0].style.cssText = styles;
+
+    button3.addEventListener('click', function (){
+        if (button3.innerText == "OFF"){
+            button3.innerText = "ON"
+            circle.style.cssText = style1
+        }
+        else if (button3.innerText == "ON"){
+            button3.innerText = "OFF"
+            circle.style.cssText = style2
+        }
+    })
+
+    //------------------------------------------------------------------
+
+    let label2 = document.getElementsByTagName('h1')[1];
+    let text = document.getElementsByTagName('input')[0];
+    let type = ""
+
+    text.addEventListener('input', (event) => {
+        type = event.target.value;
+        label2.innerText = type
+    })
+
+    //----------------------------------------------------------------------
+
+    let textField2 = document.getElementsByTagName('input')[1];
+    let showBtn = document.getElementById('show');
+
+    showBtn.addEventListener('click', function (){
+        label2.innerText = textField2.value;
+    });
+
+    //-------------------------------------------------------------------
+
+    let passwordField = document.getElementsByTagName('input')[2];
+    let passwordbtn = document.getElementById('password');
+
+    passwordbtn.addEventListener("click", function (){
+        // console.log(passwordField.getAttribute('type'));
+        if (passwordField.getAttribute('type') === 'password') {
+            passwordField.setAttribute('type', 'text');
+        } else {
+            passwordField.setAttribute('type', 'password');
+        }
+    })
+
+</script>
+</body>
+</html>
