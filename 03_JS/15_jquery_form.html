@@ -29,11 +29,11 @@
                     <textarea class="form-control" id="address" style="height: 100px"></textarea>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="GDSE">
+                    <input class="form-check-input" value="GDSE" type="radio" name="flexRadioDefault" id="GDSE">
                     <label class="form-check-label" for="GDSE">GDSE</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="CMJD">
+                    <input class="form-check-input" value="CMJD" type="radio" name="flexRadioDefault" id="CMJD">
                     <label class="form-check-label" for="CMJD">CMJD</label>
                 </div>
                 <div class="mt-3">
@@ -65,6 +65,9 @@
 <script src="assets/jquery/jquery.min.js"></script>
 <script>
     let submit = $('button').first();
+    let update = $('button').eq(1);
+    let delet = $('button').eq(2);
+    let reset = $('button').eq(3);
     let studentId = $('#studentId');
     let name = $('#fullname');
     let textarea = $('#address');
@@ -75,15 +78,18 @@
         let studentIdValue = studentId.val();
         let nameValue = name.val().trim();
         let address = textarea.val().trim();
-        let course;
+        let course = $("input[type = 'radio']:checked").val();
 
-        if (gdseRadio.prop('checked')) {
-            course = 'GDSE';
-        } else if (cmjdRadio.prop('checked')) {
-            course = 'CMJD';
-        } else {
-            course = 'Not selected';
-        }
+        // if (gdseRadio.prop('checked')) {
+        //     course = 'GDSE';
+        // } else if (cmjdRadio.prop('checked')) {
+        //     course = 'CMJD';
+        // } else {
+        //     course = 'Not selected';
+        // }
+
+        //Print in console
+        console.log(studentIdValue+" "+nameValue+" "+address+" "+course);
 
         // Add data to the table
         $('tbody').append(
@@ -94,7 +100,75 @@
             <td>${course}</td>
         </tr>`
         );
+
+        console.log('Submited');
+        clear();
     });
+
+    update.on('click', () => {
+        let studentIdValue = studentId.val();
+        let nameValue = name.val().trim();
+        let address = textarea.val().trim();
+        let course = $("input[type = 'radio']:checked").val();
+
+        $('tbody tr').each(function() {
+            let studentId = $(this).find('th').text();
+
+            if (studentId === studentIdValue) {
+                $(this).find('td:nth-child(2)').text(nameValue);
+                $(this).find('td:nth-child(3)').text(address);
+                $(this).find('td:nth-child(4)').text(course);
+            }
+        });
+
+        clear();
+    });
+
+    delet.on('click', () => {
+        let studentIdValue = studentId.val();
+
+        $('tbody tr').each(function() {
+            let studentId = $(this).find('th').text();
+
+            if (studentId === studentIdValue) {
+                // Remove the row if the student ID matches the value
+                $(this).remove();
+            }
+        });
+        clear();
+    });
+
+    reset.on('click', () => {
+        console.log('Reseted');
+    });
+
+    $('tbody').on('click', 'tr', function() {
+        console.log('clicked');
+
+        // Get data from the clicked row
+        let id = $(this).find('th');
+        studentId.val(id.eq(0).text());
+
+        let data = $(this).find('td');
+        name.val(data.eq(0).text());
+        textarea.val(data.eq(1).text());
+        // $("input[name = 'flexRadioDefault']:checked").val(data.eq(2).text());
+        if(data.eq(2).text() === 'GDSE'){
+            $('#GDSE').prop('checked',true);
+            $('#CMJD').prop('checked',false);
+        }else {
+            $('#GDSE').prop('checked',false);
+            $('#CMJD').prop('checked',true);
+        }
+    });
+
+    function clear() {
+        $('#studentId').val("");
+        $('#fullname').val("");
+        $('#address').val("");
+        $('#CMJD').prop('checked',false);
+        $('#GDSE').prop('checked',false);
+    }
 </script>
 
 </body>

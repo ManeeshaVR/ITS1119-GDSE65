@@ -6,5 +6,106 @@
 </head>
 <body>
 
+<script>
+    let arr1 = [1, 2, 3];
+
+    let arr2 = new Array(3);
+    arr2[0] = 'a'
+    arr2[1] = 'b'
+    arr2[2] = 'c'
+
+    let programming = ['Java', 'Python', 'Javascript', 'Php'];
+    console.log(programming[0])
+    console.log(programming[1])
+    console.log(programming[2])
+    console.log(programming[3])
+
+    //add new value
+    programming.push('Html')
+    console.log(programming[4])
+
+    //delete last value
+    programming.pop();
+    console.log(programming);
+
+    //delete first value
+    programming.shift();
+    console.log(programming);
+
+    //add value to first
+    programming.unshift('Css')
+    console.log(programming);
+
+    //combine two arrays
+    let combine = arr1.concat(arr2)
+    console.log(combine)
+
+    //get a unique values by getting a copy of the array
+    console.log(programming.slice(1))
+    console.log(programming.slice(1,4))
+    console.log(programming.slice(-1))
+
+    //splice() <-- give a copy of array by removing the given index
+    console.log(programming.splice(1));
+    console.log(programming.splice(0,3));
+
+    //can also replace values
+    let arr7 = ['Hello','IJSE','GDSE','CMJD'];
+    arr7.splice(1,3,'hi','hi','hi');
+    console.log(arr7);
+
+    let arr3 = ['Html', 'Css', 'Javascript']
+    //give the first index
+    console.log(arr3.indexOf('Html'))
+
+    //give the last index
+    console.log(arr3.lastIndexOf('Css'));
+
+    //isExist
+    console.log(arr3.includes('javascript'))
+    console.log(arr3.includes('Javascript'))
+
+    //return the array of the values that the given logic is true
+    let arr4 =arr3.filter((item) => {
+       return item == 'Javascript'
+    } );
+    console.log(arr4)
+
+    arr3.map((result, index) =>{
+        console.log(index+" "+result);
+    })
+
+    arr3.forEach((result) =>{
+        console.log(result);
+    })
+
+    //sort the array
+    let arr5 = [5, 3, 4, 1, 2];
+    console.log(arr5.sort())
+
+    //reverse the array
+    console.log(arr5.reverse())
+
+    //some() <-- return true if the condition is at least one is true
+    let some = arr9.some((item) => {
+        return item === 50;
+    });
+    console.log(some);
+
+    //some() <-- return false if the condition is at least one is false
+    let every = arr9.every((item) => {
+        return item === 50;
+    });
+    console.log(every);
+
+    //join()
+    console.log(arr9.join('-'));
+
+    //toString
+    console.log(arr4.toString());
+
+
+</script>
+
 </body>
 </html>
